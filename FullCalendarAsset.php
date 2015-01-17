@@ -18,16 +18,14 @@ class FullCalendarAsset extends AssetBundle
 			'yii\web\YiiAsset',
 			'yii\bootstrap\BootstrapAsset',
 	];
-	public $js; 
-	public $css;
+	public $js = ['lib/moment.min.js', 'fullcalendar.js'];
+	public $css = ['fullcalendar.css'];
 	public $language;
 	public $googleCalendar = false;
 	public $sourcePath = '@vendor/tejrajs/yii2-fullcalendar/assets';
 
 	public function init()
 	{
-		$this->js = YII_DEBUG ? ['js/fullcalendar.js'] : ['js/fullcalendar.min.js'];
-		$this->css = ['js/fullcalendar.css'];
 		parent::init();
 	}
 	public function registerAssetFiles($view)
